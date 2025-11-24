@@ -1,0 +1,147 @@
+.navbar {
+  background: linear-gradient(90deg, #003366 0%, #3366cc 100%);
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo {
+  width: 50px;
+  height: 70px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.navbar-brand:hover {
+  color: #f0a500;
+}
+
+.navbar-icon {
+  background: none;
+  display: none;
+
+  font-size: 2.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.navbar-icon:hover {
+  color: #f0a500;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #cce0ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: #f0a500;
+  border-bottom: 2px solid #f0a500;
+  outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-icon {
+    display: contents;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #003366;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.35s ease-in-out, transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+    border-top: 1px solid #224488;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navbar-menu.active {
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 55px;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    display: block;
+  }
+
+  .navbar-menu {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+}

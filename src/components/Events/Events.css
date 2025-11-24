@@ -1,0 +1,11 @@
+.events {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.event-placeholder {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
